@@ -6,7 +6,7 @@
 
     <groupId>com.github.ankurpathak.password</groupId>
     <artifactId>password-validation</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>mvn</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Java library for password validation for general use with bean validation api.
