@@ -3,7 +3,6 @@ package com.github.ankurpathak.password;
 import com.github.ankurpathak.password.util.Strings;
 import org.passay.*;
 
-import java.util.Arrays;
 import java.util.Collections;
 
 public class PasswordValidators {
