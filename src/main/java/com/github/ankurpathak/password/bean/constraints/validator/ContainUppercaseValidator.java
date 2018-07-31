@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class ContainUppercaseValidator implements ConstraintValidator<ContainUppercase, String> {
     private ContainUppercase config;
     @Override
-    public void initialize(ContainUppercase containUppercase) {
+    public void initialize(ContainUppercase config) {
         this.config = config;
     }
 

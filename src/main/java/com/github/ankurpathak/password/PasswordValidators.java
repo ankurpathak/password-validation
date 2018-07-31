@@ -3,7 +3,9 @@ package com.github.ankurpathak.password;
 import com.github.ankurpathak.password.util.Strings;
 import org.passay.*;
 
+import java.lang.reflect.Field;
 import java.util.Collections;
+import java.util.Objects;
 
 public class PasswordValidators {
 
@@ -49,6 +51,24 @@ public class PasswordValidators {
 
     public static boolean notContainWhiteSpace(String password){
         return new PasswordValidator(Collections.singletonList(new WhitespaceRule())).validate(new PasswordData(password)).isValid();
+    }
+
+
+    public static boolean matchPassword(Object passwordDto, String password, String confirmPassword)  {
+        try{
+            Field passwordField = passwordDto.getClass().getDeclaredField(password);
+            Field confirmPasswordField = passwordDto.getClass().getDeclaredField(confirmPassword);
+            passwordField.setAccessible(true);
+            confirmPasswordField.setAccessible(true);
+            Object passwordValue = passwordField.get(passwordDto);
+            Object confirmPasswordValue = confirmPasswordField.get(passwordDto);
+            passwordField.setAccessible(false);
+            confirmPasswordField.setAccessible(false);
+            return Objects.equals(passwordValue, confirmPasswordValue);
+        }catch (NoSuchFieldException | IllegalAccessException ex){
+            return false;
+        }
+
     }
 
 }
