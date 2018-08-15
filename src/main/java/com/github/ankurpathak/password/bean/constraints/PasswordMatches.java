@@ -19,6 +19,8 @@ public @interface PasswordMatches {
     String password() default "password";
     String confirmPassword() default "confirmPassword";
 
+    boolean showErrorOnConfirmPassword() default true;
+
     String message() default "{com.github.ankurpathak.password.bean.constraints.PasswordMatches.message}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};

@@ -21,7 +21,16 @@ public class PasswordMatchesValidator implements ConstraintValidator<PasswordMat
 
     @Override
     public boolean isValid(Object passwordDto, ConstraintValidatorContext context) {
-        return PasswordValidators.matchPassword(passwordDto, config.password(), config.confirmPassword());
+        boolean isValid =  PasswordValidators.matchPassword(passwordDto, config.password(), config.confirmPassword());
+
+        if (!isValid && config.showErrorOnConfirmPassword()) {
+            context.disableDefaultConstraintViolation();
+            context
+                    .buildConstraintViolationWithTemplate(context.getDefaultConstraintMessageTemplate())
+                    .addPropertyNode(config.confirmPassword()).addConstraintViolation();
+        }
+
+        return isValid;
     }
 }
 
