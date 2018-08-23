@@ -49,8 +49,11 @@ public class PasswordValidators {
             return new PasswordValidator(Collections.singletonList(new CharacterRule(rule))).validate(new PasswordData(password)).isValid();
     }
 
-    public static boolean notContainWhiteSpace(String password){
-        return new PasswordValidator(Collections.singletonList(new WhitespaceRule())).validate(new PasswordData(password)).isValid();
+    public static boolean notContainWhiteSpace(String password, boolean ignoreBlank){
+        if (Strings.isBlank(password))
+            return ignoreBlank;
+        else
+            return new PasswordValidator(Collections.singletonList(new WhitespaceRule())).validate(new PasswordData(password)).isValid();
     }
 
 

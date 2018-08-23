@@ -19,6 +19,8 @@ import java.lang.annotation.*;
 @Repeatable(NotContainWhitespace.List.class)
 public @interface NotContainWhitespace {
 
+    boolean ignoreBlank() default true;
+
 
     String message() default "{com.github.ankurpathak.password.bean.constraints.NotContainWhitespace.message}";
 

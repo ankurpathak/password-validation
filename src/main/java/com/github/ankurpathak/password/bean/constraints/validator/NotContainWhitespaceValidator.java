@@ -18,7 +18,7 @@ public class NotContainWhitespaceValidator implements ConstraintValidator<NotCon
 
     @Override
     public boolean isValid(String password, ConstraintValidatorContext context) {
-        return PasswordValidators.notContainWhiteSpace(password);
+        return PasswordValidators.notContainWhiteSpace(password, config.ignoreBlank());
     }
 
 }
