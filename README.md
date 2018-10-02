@@ -32,3 +32,11 @@ Small example to use the library is:
    }
    </code>
    </pre>
+
+You can use it very easily just by adding the following maven coordinates
+in your project:
+<dependency>
+    <groupId>com.github.ankurpathak.password</groupId>
+    <artifactId>password-validation</artifactId>
+    <version>1.0.3</version>
+</dependency>
