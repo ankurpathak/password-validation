@@ -37,4 +37,4 @@ Small example to use the library is:
          <version>1.0.3</version>
      </dependency>
  ```
- For help regarding other build tools visit the [Maven Homepage](https://mvnrepository.com/artifact/com.github.ankurpathak.password/password-validation) of project.
+ For help regarding other build tools visit the [Maven Homepage](https://mvnrepository.com/artifact/com.github.ankurpathak.primitive/primitive-validation) of project.
