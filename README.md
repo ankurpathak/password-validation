@@ -17,9 +17,7 @@ standard bean validation constraint and same can we turned of using ignoreBlank(
 flag of each constraint.
 
 Small example to use the library is:
-   
-   <pre>
-   <code>
+```
    @PasswordMatches
    public class PasswordDto {
        @Size(min = 8, max = 30)
@@ -30,5 +28,13 @@ Small example to use the library is:
        @NotBlank
        private String confirmPassword;
    }
-   </code>
-   </pre>
+```
+ Use the library by simply including the maven coordinates in your project:
+ ```
+     <dependency>
+         <groupId>com.github.ankurpathak.password</groupId>
+         <artifactId>password-validation</artifactId>
+         <version>1.0.3</version>
+     </dependency>
+ ```
+ For help regarding other build tools visit the [Maven Homepage](https://mvnrepository.com/artifact/com.github.ankurpathak.password/password-validation) of project.
